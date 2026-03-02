@@ -1,7 +1,7 @@
 from curl_cffi.requests import Session
 import csv
 
-commodity_id = 12541394
+commodity_id = 12409309
 limit = 100
 offset = 0
 all_reviews = []
