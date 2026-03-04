@@ -1,4 +1,6 @@
 # Alza sentiments
+<img width="1035" height="354" alt="image" src="img/wordcloud.png" />
+
 ## Fine-tuning LLM
 - take czech bert and run a test performance
 on product reviews.
@@ -7,6 +9,5 @@ run the test inference again.
 - compare performance before and after fine-tuning
 
 ## Class-noise problem is present
-Check this paper:
-\
-Pan, S. J., & Yang, Q. (2009). A survey on transfer learning. IEEE Transactions on knowledge and data engineering, 22(10), 1345-1359.
+
+
