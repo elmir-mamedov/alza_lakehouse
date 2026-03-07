@@ -1,6 +1,13 @@
 # Alza sentiments
 <img width="1035" height="354" alt="image" src="docs/wordcloud.png" />
 
+#### Data & Ethics Note
+
+--- Data was scraped from Alza.cz for personal research and model
+training purposes only. No data is redistributed, published, or used commercially.
+The scraper mimics respectful browsing behavior with randomized delays to avoid 
+server load. ---
+
 ## TODO list
 
 ### Cross-variant Review Deduplication

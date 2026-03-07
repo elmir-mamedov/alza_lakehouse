@@ -8,3 +8,5 @@ __pycache__/
 *.safetensors
 *.bin
 .DS_Store
+DATABRICKS_PREP_PLAN.md
+,ipynb_checkpoints/
