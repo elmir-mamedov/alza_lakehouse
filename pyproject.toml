@@ -17,4 +17,6 @@ dependencies = [
     "lxml>=6.0.2",
     "curl-cffi>=0.14.0",
     "scikit-learn>=1.8.0",
+    "pyspark>=4.1.1",
+    "delta-spark>=4.1.0",
 ]

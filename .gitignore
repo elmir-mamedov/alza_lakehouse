@@ -1,6 +1,5 @@
 .idea
 .env
-sentiment_results.csv
 __pycache__/
 *.pyc
 *.pyo
@@ -9,4 +8,5 @@ __pycache__/
 *.bin
 .DS_Store
 DATABRICKS_PREP_PLAN.md
-,ipynb_checkpoints/
+.ipynb_checkpoints/
+get_data/raw/
