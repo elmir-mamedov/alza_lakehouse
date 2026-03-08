@@ -7,7 +7,7 @@ End-to-end data project: scrape product data from [Alza.cz](https://www.alza.cz)
 
 ## What it does
 
-1. **Scrapes** ~10 000 + products from Alza's frontend APIs (product details, review stats, individual reviews)
+1. **Scrapes** 10 000 + products from Alza's frontend APIs (product details, review stats, individual reviews)
 2. **Stores** raw JSON responses in a PostgreSQL bronze table — one row per API call
 3. **Transforms** data through a medallion architecture (bronze → silver → gold) using PySpark + Delta Lake
 
