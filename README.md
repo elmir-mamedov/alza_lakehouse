@@ -13,6 +13,49 @@ End-to-end data project: scrape product data from [Alza.cz](https://www.alza.cz)
 
 ## Project structure
 
+```mermaid
+flowchart TB
+ subgraph Scraping["Scraping"]
+        B[("url_queue")]
+        A["Alza.cz Sitemap"]
+  end
+ subgraph subGraph1["Bronze Layer"]
+        C[("bronze_raw_responses")]
+  end
+ subgraph subGraph2["Silver Layer"]
+        G[("silver_review_stats")]
+        H[("silver_review")]
+        I[("silver_product")]
+  end
+ subgraph subGraph3["Gold Layer"]
+        J[("gold_product")]
+  end
+ subgraph ML["ML"]
+        N["ml_price_features"]
+        O["Price Prediction Model"]
+  end
+    A -- "collect_urls.py" --> B
+    B -- "scrape_batch_bronze.py" --> C
+    C -- "01_silver_reviewStats.sql" --> G
+    C -- "03_silver_reviews.sql" --> H
+    C -- "01_silver_products.sql" --> I
+    G -- gold SQL scripts --> J
+    H -- gold SQL scripts --> J
+    I -- gold SQL scripts --> J
+    J --> N
+    N --> O
+
+    style A fill:#4a9eff,stroke:#2d7cd6,color:#fff
+    style B fill:#4a9eff,stroke:#2d7cd6,color:#fff
+    style C fill:#cd7f32,stroke:#a6652a,color:#fff
+    style G fill:#c0c0c0,stroke:#999,color:#000
+    style H fill:#c0c0c0,stroke:#999,color:#000
+    style I fill:#c0c0c0,stroke:#999,color:#000
+    style J fill:#ffd700,stroke:#cca900,color:#000
+    style N fill:#9b59b6,stroke:#7d3c98,color:#fff
+    style O fill:#9b59b6,stroke:#7d3c98,color:#fff
+```
+
 ```
 ├── get_data/
 │   ├── collect_urls.py            # Crawl Alza sitemap for product URLs

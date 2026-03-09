@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS silver_reviews;
+DROP TABLE IF EXISTS silver_review;
 
-CREATE TABLE silver_reviews AS
+CREATE TABLE silver_review AS
 SELECT
     commodity_id AS product_id,
     elem->>'name' AS author,

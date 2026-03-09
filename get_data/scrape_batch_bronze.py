@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 from curl_cffi.requests import Session
 from db import get_connection
 
-BATCH_SIZE =10000
+BATCH_SIZE =20000
 
 # ---------------------------------------------------------------------------
 # Bronze table setup
@@ -256,7 +256,7 @@ def main():
                         raw_response=raw,
                         batch_id=batch_id,
                     )
-                    detail_name = (raw or {}).get("data", {}).get("name", "?")
+                    detail_name = ((raw or {}).get("data") or {}).get("name", "?")
                     print(f"  → detail saved ({detail_name})")
 
                     # Mark processed

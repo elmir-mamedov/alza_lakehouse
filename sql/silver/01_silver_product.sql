@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS silver_products;
+DROP TABLE IF EXISTS silver_product;
 
-CREATE TABLE silver_products AS
+CREATE TABLE silver_product AS
 SELECT
     commodity_id AS product_id,
     raw_response->'data'->>'name' AS name,
