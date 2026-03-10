@@ -82,7 +82,7 @@ flowchart TB
 
 Each row stores the full JSON response with metadata (commodity_id, endpoint, http_status, scraped_at, batch_id).
 
-**Silver / Gold layers** — planned via PySpark + Delta Lake (see `DATABRICKS_PREP_PLAN.md`).
+**Silver / Gold layers** — in SQL + planned via PySpark + Delta Lake.
 
 ## Scraping details
 
@@ -114,16 +114,13 @@ python get_data/collect_urls.py
 python get_data/scrape_batch_bronze.py
 ```
 
-## Tech stack
-
-Python 3.14, PostgreSQL, psycopg 3, curl_cffi, pandas
-
 ## Status
 
 - [x] Sitemap crawling + URL queue
 - [x] Bronze scraper (reviewStats, reviews, productDetail)
+- [x] Silver layer (SQL cleaning + flattening)
 - [ ] Silver layer (PySpark cleaning + flattening)
-- [ ] Gold layer (analytical aggregations)
+- [x] Gold layer (machine learning ready table)
 - [ ] Delta Lake exercises
 
 #### Data & Ethics Note
